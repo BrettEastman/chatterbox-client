@@ -8,6 +8,20 @@ var Parse = {  // Parse is entry point to the app. Look for the fetch. Where it 
 
   create: function(message, successCB, errorCB = null) {  // once we have enough functionality on site, try create, this is the heart of the assignment. The callback is super important and might need to call help desk. Look for parse.readall. First really big intro to callbacks. Where the hell is the success callback and how does it work?
     // TODO: send a request to the Parse API to save the message
+    $.ajax({
+      // This is the url you should use to communicate with the API server.
+      url: `https://app-hrsei-api.herokuapp.com/api/chatterbox/messages/${window.CAMPUS}`,
+      type: 'POST',
+      data: JSON.stringify(message),
+      contentType: 'application/json',
+      success: function (data) {
+        console.log('chatterbox: Message sent');
+      },
+      error: function (data) {
+        // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+        console.error('chatterbox: Failed to send message', data);
+      },
+    });
   },
 
   readAll: function(successCB, errorCB = null) {
@@ -22,9 +36,7 @@ var Parse = {  // Parse is entry point to the app. Look for the fetch. Where it 
       }
     });
   }
-
   // Post request is when user sends information to a URL - opposite of GET
-
 };
 
 
