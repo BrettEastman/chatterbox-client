@@ -12,6 +12,7 @@ var MessagesView = { // responsible for all the visual interaction
 
   render: function() {
     // Render _all_ the messages.
+    MessagesView.$chats.html('');
     var messages = Messages.retrieveFrom();
 
     messages.filter((item) => {

@@ -13,12 +13,18 @@ var Rooms = {
     return Rooms._data;
   },
 
+  currentRoomName: 'lobby',
+
   addTo: function(data) {
     const roomSet = new Set();
     for (const item of data) {
       roomSet.add(item.roomname);
     }
     Rooms._data = roomSet;
+  },
+
+  addSingleRoom: function(room) {
+    Rooms._data.add(room);
   }
 
 };

@@ -20,7 +20,8 @@ var FormView = {
     var submitObj = {};
     submitObj.text = $('input#message').val();
     submitObj.username = App.username;
-    submitObj.roomname = 'lobby';
+    submitObj.roomname = Rooms.currentRoomName;
+    console.log(Rooms.currentRoomName);
     console.log('submitObj: ', submitObj);
     // console.log(event);
 
