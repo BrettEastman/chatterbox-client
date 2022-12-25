@@ -9,5 +9,16 @@ var Rooms = {
 
   // TODO: Define methods which allow you to add rooms, update the list,
   // mark a room as selected, etc.
+  retrieveFrom: function() {
+    return Rooms._data;
+  },
+
+  addTo: function(data) {
+    const roomSet = new Set();
+    for (const item of data) {
+      roomSet.add(item.roomname);
+    }
+    Rooms._data = roomSet;
+  }
 
 };

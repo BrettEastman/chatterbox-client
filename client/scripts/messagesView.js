@@ -11,11 +11,22 @@ var MessagesView = { // responsible for all the visual interaction
   },
 
   render: function() {
-    // TODO: Render _all_ the messages.
+    // Render _all_ the messages.
+    var messages = Messages.retrieveFrom();
+
+    messages.filter((item) => {
+      return (item.username !== null || item.text !== null);
+    }).forEach((message) => {
+      MessagesView.renderMessage(message);
+    });
   },
 
   renderMessage: function(message) {
-    // TODO: Render a single message.
+    // Render a single message.
+    if (message.username && message.text) {
+      var htmlMessage = MessageView.render({username: message.username, message: message.text});
+      MessagesView.$chats.append(htmlMessage);
+    }
   },
 
   handleClick: function(event) { // this is an example of the Controller

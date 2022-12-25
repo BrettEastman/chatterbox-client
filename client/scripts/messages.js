@@ -7,20 +7,23 @@ var Messages = { // responsible for the data part of messages. This is Model
   // TODO: Define how you want to store your messages.
   // FROM LEARN:
   // The message objects you send to the api server (via POST requests) should be in the following format:
-  _data: [{
-    username: 'shawndrost',
-    text: 'trololo',
-    roomname: '4chan',
-  }],
+  _data: [],
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
   retrieveFrom: function() {
-
+    return Messages._data;
   },
 
-  addTo: function() {
-
+  addTo: function(data) {
+    // for (var i = 0; i < data.length; i++) {
+    //   var currentObj = data[i];
+    //   var messageObj = {};
+    //   messageObj.username = currentObj.username || null;
+    //   messageObj.text = currentObj.text || null;
+    //   messageObj.roomname = currentObj.roomname || null;
+    //   Messages._data.push(currentObj);
+    // }
+    Messages._data.push(...data);
   }
-
 };

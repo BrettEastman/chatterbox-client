@@ -13,6 +13,8 @@ var RoomsView = {
 
   render: function() {
     // TODO: Render out the list of rooms.
+    const rooms = Rooms.retrieveFrom();
+    console.log(rooms);
   },
 
   renderRoom: function(roomname) {
