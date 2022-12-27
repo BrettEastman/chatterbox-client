@@ -17,7 +17,6 @@ var RoomsView = {
     // TODO: Render out the list of rooms.
     RoomsView.$select.html('');
     const rooms = Rooms.retrieveFrom();
-    // console.log(rooms);
     for (var room of rooms) {
       RoomsView.renderRoom(room);
     }
@@ -30,9 +29,7 @@ var RoomsView = {
 
   handleChange: function(event) {
     // TODO: Handle a user selecting a different room.
-    // alert( this.value );
     Rooms.currentRoomName = this.value;
-    // console.log(Rooms.currentRoomName);
   },
 
   handleClick: function(event) {

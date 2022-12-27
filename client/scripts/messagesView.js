@@ -26,9 +26,7 @@ var MessagesView = { // responsible for all the visual interaction
   renderMessage: function(message) {
     // Render a single message.
     var currFriends = Friends.getCurrentFriends();
-    // console.log(currFriends);
     if (currFriends.includes(message.username)) {
-      // console.log('here')
       var htmlMessage = MessageView.render({username: message.username, message: message.text, friend: ' friend'});
       MessagesView.$chats.append(htmlMessage);
     } else {
@@ -40,22 +38,8 @@ var MessagesView = { // responsible for all the visual interaction
   handleClick: function(event) { // this is an example of the Controller
     // TODO: handle a user clicking on a message
     // (this should add the sender to the user's friend list).
-    // console.log('event', event);
     var currentFriend = $(this).text();
-    // $(this).addClass('friend');
-
     Friends.toggleStatus(currentFriend);
-
-    // for (var prop in Friends._data) {
-    //   if (Friends._data[prop] === true) {
-
-    //   }
-    // }
-    // $( ".username" ).each(function( i ) {
-    //   if ( $(this).text() === currentFriend) {
-    //     $(this).addClass('friend');
-    //   }
-    // console.log(Friends.getCurrentFriends());
     MessagesView.render();
   }
 };
