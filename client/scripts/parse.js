@@ -2,11 +2,11 @@
 // Or... just the Parse API. Populate this object with methods
 // which send requests to the RESTful Parse API.
 
-var Parse = {  // Parse is entry point to the app. Look for the fetch. Where it all starts - Lets get this data and let's display it.
+var Parse = { // Parse is entry point to the app. Look for the fetch. Where it all starts - Lets get this data and let's display it.
 
   server: `https://app-hrsei-api.herokuapp.com/api/chatterbox/messages/${window.CAMPUS}`,
 
-  create: function(message, successCB, errorCB = null) {  // once we have enough functionality on site, try create, this is the heart of the assignment. The callback is super important and might need to call help desk. Look for parse.readall. First really big intro to callbacks. Where the hell is the success callback and how does it work?
+  create: function(message, successCB, errorCB = null) { // once we have enough functionality on site, try create, this is the heart of the assignment. The callback is super important and might need to call help desk. Look for parse.readall. First really big intro to callbacks. Where the hell is the success callback and how does it work?
     // TODO: send a request to the Parse API to save the message
     $.ajax({
       // This is the url you should use to communicate with the API server.

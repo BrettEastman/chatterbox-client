@@ -5,8 +5,6 @@
 var Messages = { // responsible for the data part of messages. This is Model
 
   // TODO: Define how you want to store your messages.
-  // FROM LEARN:
-  // The message objects you send to the api server (via POST requests) should be in the following format:
   _data: [],
 
   // TODO: Define methods which allow you to retrieve from,

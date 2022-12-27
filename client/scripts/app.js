@@ -36,6 +36,7 @@ var App = {
       MessagesView.render();
       Rooms.addTo(data);
       RoomsView.render();
+      Friends.addUsernameData(data);
       callback();
     });
   },

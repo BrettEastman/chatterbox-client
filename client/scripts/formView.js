@@ -21,8 +21,8 @@ var FormView = {
     submitObj.text = $('input#message').val();
     submitObj.username = App.username;
     submitObj.roomname = Rooms.currentRoomName;
-    console.log(Rooms.currentRoomName);
-    console.log('submitObj: ', submitObj);
+    // console.log(Rooms.currentRoomName);
+    // console.log('submitObj: ', submitObj);
     // console.log(event);
 
     Parse.create(submitObj);

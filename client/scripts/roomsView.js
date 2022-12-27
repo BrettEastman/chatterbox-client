@@ -33,16 +33,14 @@ var RoomsView = {
     // alert( this.value );
     Rooms.currentRoomName = this.value;
     // console.log(Rooms.currentRoomName);
-
   },
 
   handleClick: function(event) {
     // TODO: Handle the user clicking the "Add Room" button.
     var newRoomName = prompt('What is the name of the new room?');
     Rooms.currentRoomName = newRoomName;
-    Rooms.addSingleRoom(newRoomName);
+    Rooms.add(newRoomName);
     RoomsView.render();
     RoomsView.$select.val(newRoomName).change();
   }
-
 };

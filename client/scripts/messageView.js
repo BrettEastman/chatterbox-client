@@ -7,10 +7,16 @@ var MessageView = {
   // TODO: Update this template accordingly.
   render: _.template(`
       <div class="chat">
-        <div class="username"><%- username %></div>
+        <div class="username <%- friend %>"><%- username %></div>
         <div><%- message %></div>
       </div>
-    `)
+    `),
 
+  // renderBold: _.template(`
+  //     <div class="chat">
+  //       <div class="username"><em>%- username %></em>/div>
+  //       <div><%- message %></div>
+  //     </div>
+  //   `)
   // render({username: data.username, message: data.message});
 };
